@@ -1,21 +1,3 @@
-# Headless service for statefulset network identity
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ template "elasticsearch.fullname" . }}
-  labels:
-{{ include "elasticsearch.labels" . | indent 4 }}
-spec:
-  clusterIP: None
-  ports:
-    - port: 9200
-      name: serving
-    - port: 9300
-      name: node-to-node
-  selector:
-    app: {{ template "elasticsearch.name" . }}
-    release: {{ .Release.Name }}
----
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:

@@ -1,0 +1,25 @@
+# Set these to specify the image to use
+image: docker.elastic.co/elasticsearch/elasticsearch
+imageTag: "6.3.1"
+imagePullPolicy: IfNotPresent
+
+# Set this to control the number of replicas in the StatefulSet
+replicas: 3
+
+# Set this to control the resources available to each Elasticsearch pod
+resources: {}
+
+# Set these to control the placement of pods on nodes
+nodeSelector: {}
+tolerations: []
+
+javaOptions: "-Xms512m -Xmx512m"
+
+persistence:
+  # If true, PVCs will be created for cluster nodes. If false, emptyDirs will be used.
+  enabled: false
+  # If set to a storage class name, that storage class will be used for PVCs.
+  # If not given at all, the default storage class will be used.
+  # If set to the empty string, PVCs will not be created and pre-existing PVs will be bound.
+  # storageClass: standard
+  claimSize: 50Gi

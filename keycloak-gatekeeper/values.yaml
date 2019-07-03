@@ -16,8 +16,8 @@ upstreamUrl: ""
 
 # The resources to protect, in command-line format
 #   See https://www.keycloak.org/docs/latest/securing_apps/index.html#example-usage-and-configuration
-protectedResources: []
-  # - "uri=/*"
+protectedResources:
+  - "uri=/*"
   # - "uri=/admin*|roles=admin"
   # - "uri=/public*|white-listed=true"
 

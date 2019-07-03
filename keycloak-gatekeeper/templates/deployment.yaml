@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "keycloak-gatekeeper.fullname" . }}
+  labels:
+    {{- include "keycloak-gatekeeper.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "keycloak-gatekeeper.selector-labels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "keycloak-gatekeeper.selector-labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - --listen=0.0.0.0:3000
+            - --discovery-url={{ .Values.discoveryUrl | required "discoveryUrl is required" }}
+            - --client-id={{ .Values.clientId | required "clientId is required" }}
+            - --client-secret={{ .Values.clientSecret | required "clientSecret is required" }}
+            # Allow redirection-url to be auto-detected from X-Forwarded headers
+            - --upstream-url={{ .Values.upstreamUrl | required "upstreamUrl is required" }}
+            - --enable-authorization-header=true
+            {{- range .Values.protectedResources }}
+            - --resources={{ . | quote }}
+            {{- end }}
+            - --enable-default-deny=true
+            - --enable-refresh-tokens=true
+            - --enable-session-cookies=true
+            - --preserve-host=true
+            - --enable-encrypted-token=true
+            - --encryption-key={{ .Values.encryptionKey | required "encryptionKey is required" }}
+            - --enable-logging=true
+            - --enable-json-logging=true
+            - --verbose
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /oauth/health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /oauth/health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          securityContext:
+            readOnlyRootFilesystem: true
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+#
+# Pre-commit hook for the helm-charts repository
+#
+# Packages and re-indexes the chart repository in the docs directory on every commit.
+#
+
+set -euxo pipefail
+
+mkdir -p docs
+# Find every directory with a Chart.yaml inside and package it
+find . -type f -name Chart.yaml -maxdepth 2 -exec dirname {} \; | xargs -n 1 helm package -u -d docs
+# Re-index the repository
+helm repo index --url https://cedadev.github.io/helm-charts docs
+# Add the changed docs to the commit
+git add docs

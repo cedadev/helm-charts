@@ -3,11 +3,11 @@ entries:
   keycloak-gatekeeper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-03T14:14:30.750979+01:00
+    created: 2019-07-03T14:52:39.057627+01:00
     description: Helm chart for the Keycloak Gatekeeper OIDC proxy.
-    digest: 9e93ce2e9f52f525bd4e714b5cae387e7207b4e4464264154fe2417479e1f558
+    digest: 4bea3ee3a65fc2e82dd4e2e8a48cbe62b323a87c4c5489fa8cb7b453a377d19a
     name: keycloak-gatekeeper
     urls:
     - https://cedadev.github.io/helm-charts/keycloak-gatekeeper-0.1.0.tgz
     version: 0.1.0
-generated: 2019-07-03T14:14:30.7494+01:00
+generated: 2019-07-03T14:52:39.05559+01:00

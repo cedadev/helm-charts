@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "keycloak-gatekeeper.fullname" . }}
+  labels:
+    {{- include "keycloak-gatekeeper.labels" . | nindent 4 }}
+data:
+  config.yaml: |
+    discovery-url: {{ .Values.discoveryUrl | required "discoveryUrl is required" }}
+    client-id: {{ .Values.clientId | required "clientId is required" }}
+    client-secret: {{ .Values.clientSecret | required "clientSecret is required" }}
+    # Allow redirection-url to be auto-detected from X-Forwarded headers
+    upstream-url: {{ .Values.upstreamUrl | required "upstreamUrl is required" }}
+    resources:
+      {{- toYaml .Values.protectedResources | nindent 6 }}
+    enable-encrypted-token: true
+    encryption-key: {{ .Values.encryptionKey | required "encryptionKey is required" }}
+    enable-authorization-header: true
+    enable-default-deny: true
+    enable-refresh-tokens: true
+    enable-session-cookies: true
+    preserve-host: true
+    enable-logging: true
+    enable-json-logging: true

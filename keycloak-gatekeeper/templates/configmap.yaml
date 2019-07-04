@@ -22,3 +22,5 @@ data:
     preserve-host: true
     enable-logging: true
     enable-json-logging: true
+    http-only-cookie: false
+    cors-origins: ['*']

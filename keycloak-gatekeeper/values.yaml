@@ -4,6 +4,10 @@
 #   E.g. for a Keycloak IdP this would be https://{host}/auth/realms/{realm}
 discoveryUrl: ""
 
+# Indicates if TLS verification should be skipped for the OpenID provider
+#   Set to true if the provider uses a self-signed certificate or Let's Encrypt staging
+providerSkipTlsVerify: false
+
 # The OAuth client ID
 clientId: ""
 

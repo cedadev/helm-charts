@@ -7,6 +7,9 @@ metadata:
 data:
   config.yaml: |
     discovery-url: {{ .Values.discoveryUrl | required "discoveryUrl is required" }}
+    {{ if .Values.providerSkipTlsVerify -}}
+    skip-openid-provider-tls-verify: true
+    {{ end -}}
     client-id: {{ .Values.clientId | required "clientId is required" }}
     client-secret: {{ .Values.clientSecret | required "clientSecret is required" }}
     # Allow redirection-url to be auto-detected from X-Forwarded headers

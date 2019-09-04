@@ -2,10 +2,10 @@ apiVersion: v1
 entries:
   harbor:
   - appVersion: 1.8.2
-    created: "2019-09-02T08:41:46.154802+01:00"
+    created: "2019-09-04T11:35:41.838605+01:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content
-    digest: ee33fc8110c5d9ae67b8e4ea1e95ec255366c5a74c9b88203b9d921d72b6298a
+    digest: f6bee9c794a8f370b25903a636bd2ce2f568c3f2b12f61aef510ca5865558fe8
     engine: gotpl
     home: https://goharbor.io
     icon: https://raw.githubusercontent.com/goharbor/harbor/master/docs/img/harbor_logo.png
@@ -28,11 +28,11 @@ entries:
   keycloak-gatekeeper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-02T08:41:46.155242+01:00"
+    created: "2019-09-04T11:35:41.839237+01:00"
     description: Helm chart for the Keycloak Gatekeeper OIDC proxy.
-    digest: 5c4cfbf4b7eab720a03aed1b3c2c6542371afe8d8c2e357f5eeda391a82d1ee6
+    digest: 8296e7409f1bede6c52c0e7b77637ec95881f4f242b7fbb0fa057903cab8417f
     name: keycloak-gatekeeper
     urls:
     - https://cedadev.github.io/helm-charts/keycloak-gatekeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2019-09-02T08:41:46.152607+01:00"
+generated: "2019-09-04T11:35:41.835176+01:00"

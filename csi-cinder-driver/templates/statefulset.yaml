@@ -204,14 +204,30 @@ roleRef:
   name: external-resizer-cfg
   apiGroup: rbac.authorization.k8s.io
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: csi-cinder-controller
+  labels:
+{{ include "csi-cinder-driver.labels" . | indent 4 }}
+spec:
+  selector:
+    app.kubernetes.io/name: {{ include "csi-cinder-driver.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    component: csi-cinder-controller
+  ports:
+    - name: dummy
+      port: 12345
+---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: csi-cinder-controller
   labels:
 {{ include "csi-cinder-driver.labels" . | indent 4 }}
     component: csi-cinder-controller
 spec:
+  serviceName: csi-cinder-controller
   replicas: 1
   selector:
     matchLabels:

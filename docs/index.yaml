@@ -2,7 +2,15 @@ apiVersion: v1
 entries:
   csi-cinder-driver:
   - apiVersion: v1
-    created: "2019-10-18T15:01:57.517058+01:00"
+    created: "2019-10-18T15:12:21.003407+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 961e9927514fb8c0727aad6ccd7b660307a714c89bce2c727de593f6b04672ae
+    name: csi-cinder-driver
+    urls:
+    - https://cedadev.github.io/helm-charts/csi-cinder-driver-1.15.1.tgz
+    version: 1.15.1
+  - apiVersion: v1
+    created: "2019-10-18T15:12:21.002071+01:00"
     description: A Helm chart for Kubernetes
     digest: 1c20c5a74d19c866155eb2d601a63a7b688a14defecbfbbb627f9a001d9fc9df
     name: csi-cinder-driver
@@ -11,7 +19,7 @@ entries:
     version: 1.15.0
   harbor:
   - appVersion: 1.9.1
-    created: "2019-10-18T15:01:57.528597+01:00"
+    created: "2019-10-18T15:12:21.012896+01:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content
     digest: 2f2fad0ffc59fb22ee6caca8315352a74a94fa13d895f0caab236a953b51fb54
@@ -35,7 +43,7 @@ entries:
     - https://cedadev.github.io/helm-charts/harbor-1.2.1.tgz
     version: 1.2.1
   - appVersion: 1.8.2
-    created: "2019-10-18T15:01:57.523741+01:00"
+    created: "2019-10-18T15:12:21.007106+01:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content
     digest: ee33fc8110c5d9ae67b8e4ea1e95ec255366c5a74c9b88203b9d921d72b6298a
@@ -61,11 +69,11 @@ entries:
   keycloak-gatekeeper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T15:01:57.529286+01:00"
+    created: "2019-10-18T15:12:21.013509+01:00"
     description: Helm chart for the Keycloak Gatekeeper OIDC proxy.
-    digest: f4e68c634cacdb740131b497e4db1f3af5f7bec33fe38eef28a33f22d19f93d5
+    digest: f19aa56da543cea14ee86f0bb9e463750c94353f3baa96c9ac7d31c65c7e7921
     name: keycloak-gatekeeper
     urls:
     - https://cedadev.github.io/helm-charts/keycloak-gatekeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2019-10-18T15:01:57.515551+01:00"
+generated: "2019-10-18T15:12:21.000811+01:00"

@@ -2,16 +2,16 @@ apiVersion: v1
 entries:
   csi-cinder-driver:
   - apiVersion: v1
-    created: "2019-10-18T14:43:00.382421+01:00"
+    created: "2019-10-18T14:49:04.66709+01:00"
     description: A Helm chart for Kubernetes
-    digest: e455eb53bcd1953e7321bd0034aed50728059580251662466ed6e586899f751b
+    digest: c9a178bb348d2bffa98d5af8cb0068de565ddd4dfad4ca964654b97cadf74f09
     name: csi-cinder-driver
     urls:
     - https://cedadev.github.io/helm-charts/csi-cinder-driver-1.15.0.tgz
     version: 1.15.0
   harbor:
   - appVersion: 1.9.1
-    created: "2019-10-18T14:43:00.395016+01:00"
+    created: "2019-10-18T14:49:04.678539+01:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content
     digest: 2f2fad0ffc59fb22ee6caca8315352a74a94fa13d895f0caab236a953b51fb54
@@ -35,7 +35,7 @@ entries:
     - https://cedadev.github.io/helm-charts/harbor-1.2.1.tgz
     version: 1.2.1
   - appVersion: 1.8.2
-    created: "2019-10-18T14:43:00.386334+01:00"
+    created: "2019-10-18T14:49:04.67133+01:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content
     digest: ee33fc8110c5d9ae67b8e4ea1e95ec255366c5a74c9b88203b9d921d72b6298a
@@ -61,11 +61,11 @@ entries:
   keycloak-gatekeeper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T14:43:00.399284+01:00"
+    created: "2019-10-18T14:49:04.679164+01:00"
     description: Helm chart for the Keycloak Gatekeeper OIDC proxy.
-    digest: fc941f2566062e87d43a8d56c3254d8ba8b3fa15be7041cef1592556a33b38ca
+    digest: 2d90e8988d9fa9e79713645ee7b846ad6ce145c392ff28d23bd54a1abd95a549
     name: keycloak-gatekeeper
     urls:
     - https://cedadev.github.io/helm-charts/keycloak-gatekeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2019-10-18T14:43:00.380959+01:00"
+generated: "2019-10-18T14:49:04.665411+01:00"

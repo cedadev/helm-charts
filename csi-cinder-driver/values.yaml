@@ -1,0 +1,33 @@
+# Default values for csi-cinder-driver
+
+image:
+  repository: docker.io/cedadev/cinder-csi-plugin
+  tag: 924e0015
+  pullPolicy: IfNotPresent
+
+csi:
+  attacher:
+    image:
+      repository: quay.io/k8scsi/csi-attacher
+      tag: v1.2.1
+      pullPolicy: IfNotPresent
+  provisioner:
+    image:
+      repository: quay.io/k8scsi/csi-provisioner
+      tag: v1.3.0
+      pullPolicy: IfNotPresent
+  snapshotter:
+    image:
+      repository: quay.io/k8scsi/csi-snapshotter
+      tag: v1.2.0
+      pullPolicy: IfNotPresent
+  resizer:
+    image:
+      repository: quay.io/k8scsi/csi-resizer
+      tag: v0.2.0
+      pullPolicy: IfNotPresent
+  nodeDriverRegistrar:
+    image:
+      repository: quay.io/k8scsi/csi-node-driver-registrar
+      tag: v1.1.0
+      pullPolicy: IfNotPresent

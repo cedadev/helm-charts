@@ -2,7 +2,7 @@
 
 image:
   repository: docker.io/cedadev/cinder-csi-plugin
-  tag: 924e0015
+  tag: d8cd3ad0
   pullPolicy: IfNotPresent
 
 csi:

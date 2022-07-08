@@ -1,6 +1,6 @@
 # Default values for keycloak-gatekeeper chart
 
-# The discovery URL for the OIDC IdP 
+# The discovery URL for the OIDC IdP  
 #   E.g. for a Keycloak IdP this would be https://{host}/auth/realms/{realm}
 discoveryUrl: ""
 

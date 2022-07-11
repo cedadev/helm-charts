@@ -36,8 +36,8 @@ replicaCount: 1
 
 # The Keycloak Gatekeeper image to use
 image:
-  repository: bitnami/keycloak-gatekeeper
-  tag: latest
+  repository: containerinfra/keycloak-gatekeeper
+  tag: 6.0.1
   pullPolicy: IfNotPresent
 
 # Override the name (defaults to chart name)

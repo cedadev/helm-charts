@@ -37,7 +37,7 @@ replicaCount: 1
 # The Keycloak Gatekeeper image to use
 image:
   repository: gogatekeeper/gatekeeper
-  #tag: 1.5.0 # no tahs for gogatekeeper
+  #tag: 1.5.0 # no tags for gogatekeeper
   pullPolicy: IfNotPresent
 
 # Override the name (defaults to chart name)
